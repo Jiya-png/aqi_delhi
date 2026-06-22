@@ -1,0 +1,12 @@
+# Secrets - never commit these
+.env
+
+# Virtual environment - too large, and regenerable from requirements.txt
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Data files (often large or messy - we'll decide later if any should be tracked)
+data/*.csv
