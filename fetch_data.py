@@ -34,6 +34,9 @@ params = {
     "api-key": API_KEY,   # proves who we are (so the server trusts us)
     "format": "json",     # we want the response back as JSON (structured text)
     "limit": 1000,        # ask for up to 1000 rows in one go
+    "filters[city]": "Delhi",  # ask the SERVER to only send Delhi rows,
+                                # instead of downloading all of India and
+                                # filtering afterward ourselves
 }
 
 # Some servers block requests that "look like" they're from a script
@@ -81,5 +84,6 @@ else:
     print(df.head())
 
     # ---- STEP 7: Save it so we don't have to re-fetch every time ----
-    df.to_csv("data/raw_aqi_data.csv", index=False)
-    print("\nSaved to data/raw_aqi_data.csv")
+    df.to_csv("data/delhi_aqi_raw.csv", index=False)
+    print("\nSaved to data/delhi_aqi_raw.csv")
+    
